@@ -4,10 +4,11 @@ import { useSelector } from "react-redux";
 import "./styles.css";
 import WeatherForcast from "./WeatherForcast";
 import Favorite from "./Favorite";
+import { ReduxState } from "../../redux/types/index"
 
 const Home = () => {
 
-    const { data: {data} } = useSelector(state => state)
+  const { data }= useSelector((state: ReduxState) => state)
 
   return (
     <div className=" mx-auto">
@@ -18,7 +19,7 @@ const Home = () => {
         </Col>
         <Col md={5} className='ml-5'>
         <div>
-            {data ?
+            {data && data.coord ?
             <iframe title='#'                                                                //lon   //lat
             src={`https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d19988.66471838222!2d${data.coord.lon}!3d${data.coord.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sde!4v1638529771795!5m2!1sen!2sde`}
             width={530}

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Data } from '../../redux/types';
 
 interface FavoriteListProps {
-    data: Data
+    data: Data 
 }
 
 const FavoriteList = ({ data }:FavoriteListProps) => {
@@ -16,7 +16,7 @@ const FavoriteList = ({ data }:FavoriteListProps) => {
 
     return(
         <>
-        { data ? 
+        { data && data.timezone && data.sys && data.wind && data.main?.temp && data.weather &&
                 <div onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}  className="weather-side ml-5 position-relative">
                 {isShown !== false ? 
                     <div>
@@ -70,7 +70,7 @@ const FavoriteList = ({ data }:FavoriteListProps) => {
                     <h3 className="weather-desc">{data.weather.map(w => w.main)}</h3>
                 </div>
                 
-            </div> : null
+            </div>
         }
     </>
     )

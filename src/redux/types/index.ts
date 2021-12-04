@@ -1,6 +1,6 @@
 
 export interface ReduxState {
-    data: Data ,
+    data: Data,
     addFavorite: { 
       favorites:  Data[]
     }
