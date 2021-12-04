@@ -11,7 +11,7 @@ import { ReduxState, Data } from "../types/index"
 const allCompose = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose 
 
 export const initialState: ReduxState = {
-  data: {},
+  data: null,
   addFavorite: {
       favorites: []
   }

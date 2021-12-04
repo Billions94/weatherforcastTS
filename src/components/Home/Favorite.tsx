@@ -6,7 +6,7 @@ import { ReduxState } from "../../redux/types";
 const Favorite = () => {
 
     const { favorites }  = useSelector((state: ReduxState['addFavorite']) => state)
-    console.log('i am the data ', favorites)
+    console.log('i am the favorites ', favorites)
 
   return (
     <div className="containerMod">

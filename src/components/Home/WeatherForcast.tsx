@@ -5,14 +5,14 @@ import { ReduxState } from "../../redux/types/index"
 
 const WeatherForcast = () => {
 
-    const { data }= useSelector((state: ReduxState) => state)
+    const { data } = useSelector((state: ReduxState) => state)
     const addToFavorite = useDispatch()
     console.log('i am the data ', data)
 
   return (
 <div className="container ">
 
-{ data  === undefined ? 
+{ data  === null ? 
   <div className="container">
   <div className="weather-side">
     <div className="weather-gradient" />
@@ -87,7 +87,7 @@ const WeatherForcast = () => {
 </div>
         :
 <>
-    { data.timezone && data.sys && data.main?.temp && data.weather && data.wind && data.sys.sunrise && 
+    { data && data.timezone && data.sys && data.main?.temp && data.weather && data.wind && data.sys.sunrise && 
       data.sys.sunset && data.main.feels_like && data.main.temp_min && data.main.temp_max &&
       <>
        <div className="weather-side">
