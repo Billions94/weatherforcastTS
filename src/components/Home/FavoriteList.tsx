@@ -16,7 +16,7 @@ const FavoriteList = ({ data }:FavoriteListProps) => {
 
     return(
         <>
-        { data && data.timezone && data.sys && data.wind && data.main?.temp && data.weather &&
+        { data && 
                 <div onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}  className="weather-side ml-5 position-relative">
                 {isShown !== false ? 
                     <div>

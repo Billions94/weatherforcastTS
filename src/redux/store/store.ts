@@ -5,7 +5,7 @@ import { encryptTransform } from "redux-persist-transform-encrypt";
 import thunk from "redux-thunk";
 import dataReducer from "../reducers/dataReducer";
 import favoritesReducer from "../reducers/favoriteReducer";
-import { ReduxState, Data } from "../types/index"
+import { ReduxState } from "../types/index"
 
 
 const allCompose = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose 
@@ -34,9 +34,9 @@ const allReducers = combineReducers({
     addFavorite: favoritesReducer
 })
 
-const persistedReducer = persistReducer(persisConfig, allReducers)
+// const persistedReducer = persistReducer(persisConfig, allReducers)
 
-const store = createStore(persistedReducer, initialState, allCompose(applyMiddleware(thunk)))
+const store = createStore(allReducers, initialState, allCompose(applyMiddleware(thunk)))
 
 export default store
 

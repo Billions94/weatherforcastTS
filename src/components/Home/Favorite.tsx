@@ -5,7 +5,7 @@ import { ReduxState } from "../../redux/types";
 
 const Favorite = () => {
 
-    const { favorites }  = useSelector((state: ReduxState['addFavorite']) => state)
+    const { addFavorite: {favorites} }  = useSelector((state: ReduxState) => state)
     console.log('i am the favorites ', favorites)
 
   return (

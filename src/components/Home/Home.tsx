@@ -8,7 +8,7 @@ import { ReduxState } from "../../redux/types/index"
 
 const Home = () => {
 
-  const data = useSelector((state: ReduxState['data']) => state)
+  const {data} = useSelector((state: ReduxState) => state)
 
   return (
     <div className=" mx-auto">
