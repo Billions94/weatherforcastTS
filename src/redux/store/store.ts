@@ -34,9 +34,9 @@ const allReducers = combineReducers({
     addFavorite: favoritesReducer
 })
 
-// const persistedReducer = persistReducer(persisConfig, allReducers)
+const persistedReducer = persistReducer(persisConfig, allReducers)
 
-const store = createStore(allReducers, initialState, allCompose(applyMiddleware(thunk)))
+const store = createStore(persistedReducer, initialState, allCompose(applyMiddleware(thunk)))
 
 export default store
 
